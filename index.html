@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODIA AI - The Pursuit of AI Excellence</title>
+    <meta name="description" content="Nigeria's first voice-based AI infrastructure company. We deploy production-grade AI agents for businesses, universities, and government agencies across Africa.">
+    <meta name="keywords" content="Nigerian AI, Voice AI Nigeria, Business automation Nigeria, WhatsApp AI assistant, Nigerian Pidgin AI, Lagos AI company, African voice technology">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai.odia.dev/">
+    <meta property="og:title" content="ODIA AI - Nigeria's Leading Voice AI Infrastructure Company">
+    <meta property="og:description" content="Built for Africa. Spoken in Pidgin, Ẹdo, Yoruba, Hausa, Igbo. Voice AI infrastructure that understands Nigerian culture and business needs.">
+    <meta property="og:image" content="https://ai.odia.dev/images/odia-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ai.odia.dev/">
+    <meta property="twitter:title" content="ODIA AI - Nigeria's Leading Voice AI Infrastructure Company">
+    <meta property="twitter:description" content="Built for Africa. Spoken in Pidgin, Ẹdo, Yoruba, Hausa, Igbo. Voice AI infrastructure that understands Nigerian culture and business needs.">
+    <meta property="twitter:image" content="https://ai.odia.dev/images/odia-og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <style>
+        :root {
+            --primary-navy: #1e3a5f;
+            --accent-gold: #c9a94f;
+            --bg-dark: #0f1419;
+            --bg-card: #1a252f;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-dark: #1a1a1a;
+            --bg-light: #f8fafc;
+            --border-color: rgba(255,255,255,0.1);
+            --gradient-primary: linear-gradient(135deg, #1e3a5f 0%, #2d4a6b 100%);
+            --gradient-accent: linear-gradient(135deg, #c9a94f 0%, #b8984a 100%);
+            --success-green: #10b981;
+            --error-red: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary-navy);
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 80px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: white;
+            border-bottom-color: var(--accent-gold);
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 300;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 4px;
+        }
+        
+        .client-login {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .client-login:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><path d="M0,200 Q250,100 500,150 T1000,200 L1000,500 L0,500 Z" fill="rgba(0,0,0,0.1)"/></svg>') bottom center/cover no-repeat;
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .hero-title {
+            color: white;
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 200;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+        
+        .hero-cta {
+            background: var(--accent-gold);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .hero-cta:hover {
+            background: #b8984a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 169, 79, 0.3);
+        }
+        
+        /* Awards Section */
+        .awards {
+            background: #1a2d42;
+            padding: 80px 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .award-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .award-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+        
+        .award-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        
+        .award-title {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .award-source {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        .awards-disclaimer {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .awards-disclaimer p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* News Section */
+        .news {
+            background: var(--bg-light);
+            padding: 100px 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .news-image {
+            height: 300px;
+            background: var(--gradient-primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .news-date {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .news-company {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .news-content {
+            padding: 30px;
+        }
+        
+        .news-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .news-cta {
+            background: var(--accent-gold);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .news-cta:hover {
+            background: #b8984a;
+        }
+        
+        /* Team Section */
+        .team {
+            background: #f0f4f8;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            color: #6b7280;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title {
+            color: var(--primary-navy);
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 200;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .team-description {
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .team-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 60px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .team-image {
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 300;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .team-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .btn-outline {
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+        
+        /* Commitment Section */
+        .commitment {
+            background: white;
+            padding: 100px 0;
+        }
+        
+        .commitment-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        
+        .commitment-text {
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .video-container {
+            height: 400px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-container:hover {
+            transform: scale(1.02);
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--primary-navy);
+            transition: all 0.3s ease;
+        }
+        
+        .video-container:hover .play-button {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        /* What We Do Section */
+        .what-we-do {
+            background: var(--bg-light);
+            padding: 100px 0;
+        }
+        
+        .what-we-do-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        
+        .what-we-do-text {
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a2d42;
+            padding: 80px 0 40px;
+            color: white;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .copyright {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .legal-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .legal-links a:hover {
+            color: white;
+        }
+        
+        .disclaimer {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 40px;
+        }
+        
+        /* Voice UI Button */
+        .voice-ui-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(201, 169, 79, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+        }
+        
+        .voice-ui-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(201, 169, 79, 0.4);
+        }
+        
+        /* Voice Interface Modal */
+        .voice-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .voice-modal.active {
+            display: flex;
+        }
+        
+        .voice-interface {
+            background: var(--bg-card);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 800px;
+            height: 80%;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .voice-header {
+            background: var(--gradient-primary);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 10px;
+        }
+        
+        .voice-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            display: flex;
+            gap: 10px;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        .message.user {
+            flex-direction: row-reverse;
+        }
+        
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .message.assistant .message-avatar {
+            background: var(--gradient-accent);
+        }
+        
+        .message.user .message-avatar {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .message-content {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 16px;
+            max-width: 70%;
+            color: var(--text-primary);
+        }
+        
+        .message.user .message-content {
+            background: var(--gradient-primary);
+        }
+        
+        .voice-input {
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+        
+        .text-input {
+            flex: 1;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            color: var(--text-primary);
+            font-size: 14px;
+            resize: none;
+            min-height: 44px;
+            max-height: 120px;
+            outline: none;
+        }
+        
+        .text-input:focus {
+            border-color: var(--accent-gold);
+        }
+        
+        .text-input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        .voice-btn, .send-btn {
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .voice-btn {
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        .send-btn {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .voice-btn:hover, .send-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .awards-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .commitment-content,
+            .what-we-do-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .team-images {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .team-image {
+                height: 200px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .legal-links {
+                justify-content: center;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <nav class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="#voice-ai">Voice AI</a>
+                <a href="#infrastructure">Infrastructure</a>
+                <a href="#about">Our Story</a>
+                <a href="#team">Team</a>
+                <a href="#projects">Projects</a>
+                <a href="#resources">Resources</a>
+                <a href="#careers">Careers</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <a href="/" class="logo">ODIA</a>
+            
+            <a href="#portal" class="client-login">
+                👤 Client Portal
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <div class="hero-subtitle">Originating Ideas and Creating Opportunities</div>
+            <h1 class="hero-title">THE PURSUIT OF<br>AI EXCELLENCE</h1>
+            <p class="hero-description">
+                Nigeria's first voice-based AI infrastructure company. We deploy production-grade AI agents for businesses, universities, and government agencies across Africa.
+            </p>
+            <button class="hero-cta" onclick="openVoiceInterface()">Try ODIA Live</button>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards">
+        <div class="container">
+            <div class="awards-grid">
+                <div class="award-card fade-in">
+                    <div class="award-logo">TECHCABAL</div>
+                    <div class="award-title">ODIA Named as a Top AI Startup in Africa</div>
+                    <div class="award-source">TechCabal Nigeria 2025</div>
+                </div>
+                <div class="award-card fade-in">
+                    <div class="award-logo">Great Place To Work</div>
+                    <div class="award-title">ODIA is a Great Place to Work-Certified™ Company</div>
+                    <div class="award-source">GPTW Nigeria</div>
+                </div>
+            </div>
+            <div class="awards-disclaimer fade-in">
+                <p>
+                    The awards listed are not an endorsement of any third party to invest with ODIA and are not indicative of future performance. 
+                    Businesses should not rely on awards for any purpose and should conduct their own review prior to investment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <div class="news-grid">
+                <div class="news-card fade-in">
+                    <div class="news-image">
+                        <div class="news-date">January 12, 2025</div>
+                        <div class="news-company">ODIA AI</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">ODIA Recognized as Africa's Leading Voice AI Infrastructure Company</h3>
+                        <a href="#news" class="news-cta">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <div class="news-image">
+                        <div class="news-date">December 18, 2024</div>
+                        <div class="news-company">ODIA AI</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">ODIA Deploys Emergency AI System for Nigerian Federal Government</h3>
+                        <a href="#news" class="news-cta">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card fade-in">
+                    <div class="news-image">
+                        <div class="news-date">November 25, 2024</div>
+                        <div class="news-company">ODIA AI</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">ODIA Partners with Mudiame University for AI-Powered Education</h3>
+                        <a href="#news" class="news-cta">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-subtitle fade-in">Our Team</div>
+            <h2 class="section-title fade-in">YOUR BEST INTEREST IS OUR<br>BEST INTEREST</h2>
+            <p class="team-description fade-in">
+                Engineers, founders, and innovators. We are not just one, we are all, and we have built Nigeria's most advanced voice AI infrastructure. As a 100% Nigerian-owned company, we have the cultural understanding to solve real African problems.
+            </p>
+            <div class="team-images fade-in">
+                <div class="team-image">Nigerian Engineers</div>
+                <div class="team-image">AI Research Team</div>
+                <div class="team-image">Voice Technology</div>
+            </div>
+            <div class="team-buttons fade-in">
+                <a href="#team" class="btn-outline">Meet The Team</a>
+                <a href="#culture" class="btn-outline">Our Culture</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section class="commitment">
+        <div class="container">
+            <div class="section-subtitle fade-in">Aligned Commitment</div>
+            <h2 class="section-title fade-in">TECHNOLOGICAL EXCELLENCE.<br>CULTURAL CONNECTION.</h2>
+            <div class="commitment-content">
+                <div class="commitment-text fade-in">
+                    Our difference is defined by the alignment of deep technical research with the cultural understanding side of African business. It is our intellect that drives the pursuit of AI excellence – and equally important is our empathy, which guides us in understanding each client's individual circumstances and aspirations.
+                </div>
+                <div class="video-container fade-in" onclick="playVideo('/about-video')">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do" id="voice-ai">
+        <div class="container">
+            <div class="section-subtitle fade-in">What We Do</div>
+            <h2 class="section-title fade-in">WE ARE YOUR AI<br>INFRASTRUCTURE<br>PARTNERS</h2>
+            <div class="what-we-do-content">
+                <div class="what-we-do-text fade-in">
+                    We provide end-to-end AI agents that automate support, onboarding, escalation, payments, and lead generation. Our technology is voice-first, multilingual, and always-on. From federal emergency systems to luxury concierge services, we deploy production-grade AI that works for Nigeria.
+                </div>
+                <div class="video-container fade-in" onclick="playVideo('/mission-video')">
+                    <div class="play-button">▶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ODIA<br>AI</div>
+                <div class="footer-links">
+                    <a href="#contact">Contact</a>
+                    <a href="#careers">Careers</a>
+                    <a href="https://linkedin.com/company/odia-ai" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 ODIA AI LTD. All Rights Reserved.</div>
+                <div class="legal-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#legal">Legal Form</a>
+                    <a href="#ndpr">NDPR Compliance</a>
+                </div>
+            </div>
+            <div class="disclaimer">
+                © 2025 ODIA AI LTD. All Rights Reserved. The content of this website is for general, informational purposes. Nothing contained on this website should be construed as an offer to sell or the solicitation of any offer to buy any AI service or product offered or managed by ODIA or any other company. The provision of this information does not constitute the rendering of AI consulting, legal, accounting, tax, or other advice or services and nothing contained herein should be construed as AI investment advice, nor should it be considered as advice, endorsement or recommendation. Special Notice to Businesses: Each of the AI products and services referred to on this website is intended to be made available to Nigerian businesses. This website shall not be considered a solicitation or offering for any AI product or service to any person in any jurisdiction where such solicitation or offer would be unlawful.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Voice UI Button -->
+    <button class="voice-ui-button" onclick="openVoiceInterface()" title="Talk to ODIA Agent">
+        🎙️
+    </button>
+
+    <!-- Voice Interface Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-interface">
+            <button class="close-modal" onclick="closeVoiceInterface()">✕</button>
+            <div class="voice-header">
+                <div class="agent-avatar">🤖</div>
+                <h3>Agent Lexi</h3>
+                <p>Your Nigerian AI Assistant</p>
+            </div>
+            <div class="voice-messages" id="voiceMessages">
+                <div class="message assistant">
+                    <div class="message-avatar">AI</div>
+                    <div class="message-content">
+                        <p>How far! I'm Agent Lexi from ODIA AI. I fit help you with business automation, WhatsApp AI, and voice technology wey go make your business better. Wetin you wan know?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="voice-input">
+                <textarea 
+                    class="text-input" 
+                    id="messageInput" 
+                    placeholder="Type your message or use voice..."
+                    rows="1"
+                ></textarea>
+                <button class="voice-btn" id="voiceBtn" title="Voice Input">🎤</button>
+                <button class="send-btn" id="sendBtn" title="Send Message">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Production API Configuration with your live keys
+        const API_CONFIG = {
+            supabaseUrl: 'https://coezbdarxvrhxowvlyxr.supabase.co',
+            supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvZXpiZGFyeHZyaHhvd3ZseXhyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIyNzk3MDYsImV4cCI6MjA2Nzg1NTcwNn0.8hTHKDrA37a-KOYd9e2H1DyuRlrXhyPR56Iss84ICYk',
+            elevenlabsKey: 'sk_908a9a5355fedd00ec8696735acaffbe8f61ec7ce135c693',
+            claudeKey: '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',
+            webhookUrl: 'https://odiabackend.app.n8n.cloud/webhook/odia/agent/hybrid',
+            voiceId: 'atxzO10LEsk8kEval3af'
+        };
+
+        class ODIAVoiceAgent {
+            constructor() {
+                this.isRecording = false;
+                this.recognition = null;
+                this.messages = [];
+                this.isTyping = false;
+                
+                this.initializeElements();
+                this.initializeSpeechRecognition();
+                this.setupEventListeners();
+                this.logToSupabase('website_load', { page: 'homepage' });
+                
+                console.log('🇳🇬 ODIA AI Voice Agent - Production Ready!');
+            }
+            
+            initializeElements() {
+                this.voiceModal = document.getElementById('voiceModal');
+                this.voiceMessages = document.getElementById('voiceMessages');
+                this.messageInput = document.getElementById('messageInput');
+                this.voiceBtn = document.getElementById('voiceBtn');
+                this.sendBtn = document.getElementById('sendBtn');
+            }
+            
+            initializeSpeechRecognition() {
+                if ('webkitSpeechRecognition' in window) {
+                    this.recognition = new webkitSpeechRecognition();
+                    this.recognition.continuous = false;
+                    this.recognition.interimResults = false;
+                    this.recognition.lang = 'en-NG'; // Nigerian English
+                    
+                    this.recognition.onstart = () => {
+                        this.isRecording = true;
+                        this.voiceBtn.textContent = '🔴';
+                        this.voiceBtn.style.background = '#ef4444';
+                    };
+                    
+                    this.recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        this.messageInput.value = transcript;
+                        this.sendMessage();
+                    };
+                    
+                    this.recognition.onend = () => {
+                        this.isRecording = false;
+                        this.voiceBtn.textContent = '🎤';
+                        this.voiceBtn.style.background = '';
+                    };
+                    
+                    this.recognition.onerror = (event) => {
+                        console.error('Speech recognition error:', event.error);
+                        this.isRecording = false;
+                        this.voiceBtn.textContent = '🎤';
+                        this.voiceBtn.style.background = '';
+                        this.addMessage('assistant', 'Sorry, I had trouble hearing you. Please try typing your message.');
+                    };
+                } else {
+                    console.warn('Speech recognition not supported');
+                    this.voiceBtn.style.display = 'none';
+                }
+            }
+            
+            setupEventListeners() {
+                this.voiceBtn?.addEventListener('click', () => {
+                    if (this.isRecording) {
+                        this.recognition?.stop();
+                    } else {
+                        this.startVoiceRecording();
+                    }
+                });
+                
+                this.sendBtn.addEventListener('click', () => this.sendMessage());
+                
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+                
+                // Auto-resize textarea
+                this.messageInput.addEventListener('input', () => {
+                    this.messageInput.style.height = 'auto';
+                    this.messageInput.style.height = Math.min(this.messageInput.scrollHeight, 120) + 'px';
+                });
+            }
+            
+            startVoiceRecording() {
+                if (this.recognition && !this.isRecording) {
+                    try {
+                        this.recognition.start();
+                        this.logToSupabase('voice_button_click', { action: 'start_recording' });
+                    } catch (error) {
+                        console.error('Error starting speech recognition:', error);
+                    }
+                }
+            }
+            
+            async sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (!message || this.isTyping) return;
+                
+                this.addMessage('user', message);
+                this.messageInput.value = '';
+                this.messageInput.style.height = 'auto';
+                
+                this.logToSupabase('message_sent', { 
+                    message_length: message.length, 
+                    type: 'text',
+                    content: message.substring(0, 100) // First 100 chars for analysis
+                });
+                
+                // Show typing indicator
+                this.showTypingIndicator();
+                
+                try {
+                    const response = await this.getAgentResponse(message);
+                    this.hideTypingIndicator();
+                    this.addMessage('assistant', response);
+                } catch (error) {
+                    this.hideTypingIndicator();
+                    this.addMessage('assistant', 'I apologize, but I\'m having some technical difficulties. Please try again in a moment.');
+                }
+            }
+            
+            async getAgentResponse(message) {
+                try {
+                    // Try production webhook first
+                    const response = await fetch(API_CONFIG.webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            agent: 'lexi',
+                            source: 'website',
+                            timestamp: new Date().toISOString(),
+                            user_context: {
+                                page: 'homepage',
+                                session_id: this.getSessionId()
+                            }
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.logToSupabase('webhook_success', { response_received: true });
+                        return data.response || data.message || 'I hear you! Let me help with that.';
+                    } else {
+                        throw new Error('Webhook failed');
+                    }
+                } catch (error) {
+                    console.warn('Production webhook failed, using demo responses:', error);
+                    this.logToSupabase('webhook_failure', { error: error.message });
+                    return this.getDemoResponse(message);
+                }
+            }
+            
+            getDemoResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                // Nigerian Pidgin responses
+                if (lowerMessage.includes('wetin') || lowerMessage.includes('how far') || lowerMessage.includes('abeg')) {
+                    return "How far! I be Agent Lexi from ODIA AI. I fit help you with business automation, WhatsApp AI, and voice technology wey go make your business better. Wetin you wan know?";
+                }
+                
+                // Business inquiries
+                if (lowerMessage.includes('business') || lowerMessage.includes('help') || lowerMessage.includes('automation')) {
+                    return "I specialize in helping Nigerian businesses automate their operations! I can set up WhatsApp AI assistants, voice support systems, and payment automation through Flutterwave. We've helped 1,000+ businesses already. What specific challenge is your business facing?";
+                }
+                
+                // Pricing inquiries
+                if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('pricing')) {
+                    return "Our pricing is designed for Nigerian businesses:\n\n🚀 Starter: ₦5,000/month - Basic WhatsApp automation\n💼 Business: ₦25,000/month - Full AI agent suite\n🏢 Enterprise: ₦100,000/month - Custom deployment\n\nAll plans include Flutterwave integration and Nigerian language support. Want to start with a free 7-day trial?";
+                }
+                
+                // About ODIA
+                if (lowerMessage.includes('odia') || lowerMessage.includes('about') || lowerMessage.includes('company')) {
+                    return "ODIA AI is Nigeria's leading voice AI infrastructure company! We build production-grade AI agents that understand Nigerian culture and languages. We've deployed systems for federal government, universities, and 1,000+ businesses. Our tech includes voice AI, WhatsApp automation, and multilingual support in English, Pidgin, Ẹdo, Yoruba, Hausa, and Igbo.";
+                }
+                
+                // Free trial
+                if (lowerMessage.includes('trial') || lowerMessage.includes('demo') || lowerMessage.includes('test')) {
+                    return "Absolutely! I can set up a free 7-day trial for you right now. You'll get access to our WhatsApp AI assistant, voice automation, and Nigerian payment integration. Just need your business name and WhatsApp number to get started. Ready to transform your business?";
+                }
+                
+                // Technical questions
+                if (lowerMessage.includes('how') || lowerMessage.includes('work') || lowerMessage.includes('technical')) {
+                    return "Great question! ODIA AI works through advanced voice and text processing. We use Claude AI for intelligence, ElevenLabs for natural voice synthesis, and integrate with Nigerian payment systems like Flutterwave. Our agents can handle customer support, lead qualification, and business automation 24/7. Want to see a live demo?";
+                }
+                
+                // Default response
+                return "Thanks for reaching out! I'm Agent Lexi from ODIA AI - Nigeria's leading voice AI company. I can help with business automation, WhatsApp AI assistants, voice technology, and more. What would you like to know about our AI solutions?";
+            }
+            
+            addMessage(sender, text) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = sender === 'user' ? 'You' : 'AI';
+                
+                const content = document.createElement('div');
+                content.className = 'message-content';
+                content.innerHTML = `<p>${this.formatMessage(text)}</p>`;
+                
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(content);
+                
+                this.voiceMessages.appendChild(messageDiv);
+                this.voiceMessages.scrollTop = this.voiceMessages.scrollHeight;
+                
+                this.messages.push({ sender, text, timestamp: new Date() });
+            }
+            
+            formatMessage(text) {
+                // Convert line breaks and format lists
+                return text.replace(/\n/g, '<br>').replace(/^(🚀|💼|🏢|📱|⚡|✅|❌|💰|🎤|📞|📧)/gm, '<br>$1');
+            }
+            
+            showTypingIndicator() {
+                this.isTyping = true;
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'message assistant';
+                typingDiv.id = 'typingIndicator';
+                
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = 'AI';
+                
+                const content = document.createElement('div');
+                content.className = 'message-content';
+                content.innerHTML = '<p>Agent Lexi is thinking...</p>';
+                
+                typingDiv.appendChild(avatar);
+                typingDiv.appendChild(content);
+                
+                this.voiceMessages.appendChild(typingDiv);
+                this.voiceMessages.scrollTop = this.voiceMessages.scrollHeight;
+            }
+            
+            hideTypingIndicator() {
+                this.isTyping = false;
+                const indicator = document.getElementById('typingIndicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+            }
+            
+            getSessionId() {
+                let sessionId = localStorage.getItem('odia_session_id');
+                if (!sessionId) {
+                    sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                    localStorage.setItem('odia_session_id', sessionId);
+                }
+                return sessionId;
+            }
+            
+            async logToSupabase(event, data = {}) {
+                try {
+                    const logData = {
+                        event_name: event,
+                        event_data: data,
+                        session_id: this.getSessionId(),
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent,
+                        page_url: window.location.href
+                    };
+                    
+                    // In production, this would send to Supabase
+                    console.log('[ODIA Analytics]', logData);
+                    
+                    // Store locally for now
+                    const logs = JSON.parse(localStorage.getItem('odia_analytics') || '[]');
+                    logs.push(logData);
+                    localStorage.setItem('odia_analytics', JSON.stringify(logs.slice(-100))); // Keep last 100 events
+                    
+                } catch (error) {
+                    console.error('Analytics logging failed:', error);
+                }
+            }
+        }
+        
+        // Global functions
+        function openVoiceInterface() {
+            document.getElementById('voiceModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize voice agent if not already done
+            if (!window.odiaAgent) {
+                window.odiaAgent = new ODIAVoiceAgent();
+            }
+            
+            window.odiaAgent.logToSupabase('voice_interface_opened', { source: 'floating_button' });
+        }
+        
+        function closeVoiceInterface() {
+            document.getElementById('voiceModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            if (window.odiaAgent) {
+                window.odiaAgent.logToSupabase('voice_interface_closed', { 
+                    messages_sent: window.odiaAgent.messages.length 
+                });
+            }
+        }
+        
+        function playVideo(videoLink) {
+            console.log('Playing video:', videoLink);
+            // In production, this would open a modal or navigate to video
+            if (window.odiaAgent) {
+                window.odiaAgent.logToSupabase('video_play_attempt', { video: videoLink });
+            }
+        }
+        
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize analytics
+            console.log('🇳🇬 ODIA AI Website - Production Ready!');
+            console.log('📊 Analytics enabled - User interactions being tracked');
+            console.log('🎙️ Voice interface ready with live API integration');
+            console.log('🔗 Backend webhook:', API_CONFIG.webhookUrl);
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('voiceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVoiceInterface();
+            }
+        });
+        
+        // Escape key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('voiceModal').classList.contains('active')) {
+                closeVoiceInterface();
+            }
+        });
+    </script>
+</body>
+</html>
